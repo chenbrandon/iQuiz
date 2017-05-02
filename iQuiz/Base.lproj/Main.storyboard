@@ -12,7 +12,7 @@
         <!--iQuiz-->
         <scene sceneID="FTx-0e-Jqp">
             <objects>
-                <tableViewController id="YOq-fT-b80" sceneMemberID="viewController">
+                <tableViewController id="YOq-fT-b80" customClass="QuizTableViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KIW-qu-dUc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,13 @@
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="settingsPressed:" destination="YOq-fT-b80" eventType="touchUpInside" id="sSE-Am-6To"/>
+                                </connections>
                             </button>
+                            <connections>
+                                <action selector="settingsPressed:" destination="YOq-fT-b80" id="eM3-DK-bqL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
