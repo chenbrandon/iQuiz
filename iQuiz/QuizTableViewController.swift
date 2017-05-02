@@ -15,8 +15,6 @@ class QuizTableViewController: UITableViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         self.present(alert, animated: true)
-        print("self present done")
-        NSLog("test")
     }
     
     override func viewDidLoad() {
@@ -38,23 +36,30 @@ class QuizTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return quiz.count
     }
 
-    /*
+    let quiz: [String] = ["Math", "Marvel", "Science"]
+    let descriptions: [String] = ["Test your math skills",
+                                  "Test your knowledge of Marvel",
+                                  "Test your understanding of the world"]
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuizCell", for: indexPath) as! QuizTableViewCell
+        let subject = quiz[indexPath.row]
+        cell.Title.text = (subject)
+        cell.Description.text = descriptions[indexPath.row]
+        cell.icon.image = UIImage(named: subject)
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
