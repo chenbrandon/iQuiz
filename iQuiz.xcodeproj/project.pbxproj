@@ -14,6 +14,7 @@
 		69790DBE1EB8157D000B8349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69790DBC1EB8157D000B8349 /* LaunchScreen.storyboard */; };
 		69790DC91EB8157D000B8349 /* iQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69790DC81EB8157D000B8349 /* iQuizTests.swift */; };
 		69790DD41EB8157D000B8349 /* iQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69790DD31EB8157D000B8349 /* iQuizUITests.swift */; };
+		69790DE21EB825C6000B8349 /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69790DE11EB825C6000B8349 /* QuizTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		69790DCF1EB8157D000B8349 /* iQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69790DD31EB8157D000B8349 /* iQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITests.swift; sourceTree = "<group>"; };
 		69790DD51EB8157D000B8349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69790DE11EB825C6000B8349 /* QuizTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				69790DBA1EB8157D000B8349 /* Assets.xcassets */,
 				69790DBC1EB8157D000B8349 /* LaunchScreen.storyboard */,
 				69790DBF1EB8157D000B8349 /* Info.plist */,
+				69790DE11EB825C6000B8349 /* QuizTableViewController.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				69790DB61EB8157D000B8349 /* ViewController.swift in Sources */,
 				69790DB41EB8157D000B8349 /* AppDelegate.swift in Sources */,
+				69790DE21EB825C6000B8349 /* QuizTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
