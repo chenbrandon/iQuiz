@@ -116,7 +116,7 @@ class QuizTableViewController: UITableViewController {
         [["1", "2", "3", "4"], ["1","2","3","4"],["1","2","3","4"]]
     ]
     
-    var correctAnswers: [[Int]] = [[1,3], [2], [4], [3, 3, 4]]
+    var correctAnswers: [[Int]] = [[1,3], [2], [1], [3, 3, 4]]
     
     
     func getSubject(_ n: Int) -> String {

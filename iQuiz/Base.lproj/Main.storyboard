@@ -237,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtV-er-lwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642.39999999999998" y="905.3973013493254"/>
+            <point key="canvasLocation" x="154" y="889"/>
         </scene>
         <!--Finished View Controller-->
         <scene sceneID="GQP-41-2KN">
@@ -272,6 +272,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="am9-eu-4SH">
+                                <rect key="frame" x="316" y="617" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Finish"/>
+                                <connections>
+                                    <segue destination="TZl-wi-E76" kind="show" id="0fq-ka-2Wj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -282,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Dm-Og-5ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="232.80000000000001" y="941.37931034482767"/>
+            <point key="canvasLocation" x="-713" y="888"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wMz-Re-FjE">
@@ -305,6 +313,6 @@
         <image name="defaultIcon" width="626" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MHq-zG-7Jz"/>
+        <segue reference="QVd-33-mT6"/>
     </inferredMetricsTieBreakers>
 </document>
