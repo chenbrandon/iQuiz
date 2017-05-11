@@ -9,7 +9,14 @@
 import UIKit
 
 class AnswerViewController: UIViewController {
-
+    var theSubject: String!
+    var theQuestion: [String]!
+    var answers: [[String]]!
+    var correct: [Int]!
+    var selected: Int!
+    var number: Int!
+    var score: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

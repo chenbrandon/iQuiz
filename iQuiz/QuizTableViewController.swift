@@ -115,6 +115,7 @@ class QuizTableViewController: UITableViewController {
                 qvc.answers = answers
                 qvc.correct = correct
                 qvc.number = 1
+                qvc.score = 0
             }
         }
     }

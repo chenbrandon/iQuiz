@@ -15,6 +15,7 @@ class QuestionViewController: UIViewController {
     var correct: [Int]!
     var selected: Int = -1
     var number: Int!
+    var score: Int!
     
     
     
@@ -80,14 +81,23 @@ class QuestionViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Pass the selected object to the new view controller.	
+        if segue.identifier == "questionToAnswer", let avc = segue.destination as? AnswerViewController {
+            avc.theSubject = theSubject
+            avc.theQuestion = theQuestion
+            avc.answers = answers
+            avc.correct = correct
+            avc.selected = selected
+            avc.number = number
+            avc.score = score
+        }
     }
-    */
+    
 
 }
