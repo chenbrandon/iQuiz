@@ -16,10 +16,16 @@ class AnswerViewController: UIViewController {
     var selected: Int!
     var number: Int!
     var score: Int!
+    @IBOutlet weak var answer: UILabel!
+    @IBOutlet weak var gotRight: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let actual = correct[number]
+        answer.text = answers[number][actual - 1]
+        if selected == actual {
+            gotRight.text = "You got the answer right"
+        }
         // Do any additional setup after loading the view.
     }
 
