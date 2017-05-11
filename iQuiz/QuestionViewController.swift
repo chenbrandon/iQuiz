@@ -10,9 +10,11 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     var theSubject: String!
-    var theQuestion: String!
-    var answers: [String]!
-    var correct: Int!
+    var theQuestion: [String]!
+    var answers: [[String]]!
+    var correct: [Int]!
+    var selected: Int = -1
+    var number: Int!
     
     
     
@@ -24,33 +26,47 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var ans4: UIButton!
     
     @IBAction func a1press(_ sender: Any) {
+        selected = 1
+        ans1.isSelected = true
+        ans2.isSelected = false
+        ans3.isSelected = false
+        ans4.isSelected = false
+        nextButton.isHidden = false
     }
     @IBAction func a2press(_ sender: Any) {
+        selected = 2
+        ans1.isSelected = false
+        ans2.isSelected = true
+        ans3.isSelected = false
+        ans4.isSelected = false
+        nextButton.isHidden = false
     }
     @IBAction func a3press(_ sender: Any) {
+        selected = 3
+        ans1.isSelected = false
+        ans2.isSelected = false
+        ans3.isSelected = true
+        ans4.isSelected = false
+        nextButton.isHidden = false
     }
     @IBAction func a4press(_ sender: Any) {
+        selected = 4
+        ans1.isSelected = false
+        ans2.isSelected = false
+        ans3.isSelected = false
+        ans4.isSelected = true
+        nextButton.isHidden = false
     }
     @IBOutlet weak var nextButton: UIButton!
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("test \(subject)  \(question) \(answers) + \(correct) ")
-        ans1.setTitle(answers[0], for: .normal)
-        ans2.setTitle(answers[1], for: .normal)
-        ans3.setTitle(answers[2], for: .normal)
-        ans4.setTitle(answers[3], for: .normal)
-        question.text = theQuestion
+        ans1.setTitle(answers[number][0], for: .normal)
+        ans2.setTitle(answers[number][1], for: .normal)
+        ans3.setTitle(answers[number][2], for: .normal)
+        ans4.setTitle(answers[number][3], for: .normal)
+        question.text = theQuestion[number]
         subject.text = theSubject
         nextButton.isHidden = true
         

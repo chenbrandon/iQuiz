@@ -105,14 +105,16 @@ class QuizTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "cellToQuestion", let qvc = segue.destination as? QuestionViewController {
             if let cell = sender as? UITableViewCell, let index = tableView.indexPath(for: cell) {
+                print(index)
                 let subject: String = "theSubject"
-                let question: String = "theQuestion"
-                let answers:[String] = ["a1", "a2", "a3", "a4"]
-                let correct: Int = 2
+                let question: [String] = ["theQuestion", "theQuestion2"]
+                let answers:[[String]] = [["a1", "a2", "a3", "a4"], ["b1","b2","b3","b4"]]
+                let correct: [Int] = [2, 4]
                 qvc.theSubject = subject
                 qvc.theQuestion = question
                 qvc.answers = answers
                 qvc.correct = correct
+                qvc.number = 1
             }
         }
     }
