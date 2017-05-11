@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--iQuiz-->
+        <!--Home-->
         <scene sceneID="FTx-0e-Jqp">
             <objects>
                 <tableViewController id="YOq-fT-b80" customClass="QuizTableViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="YOq-fT-b80" id="DZM-yd-zp8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="iQuiz" id="V2F-lt-iHa">
+                    <navigationItem key="navigationItem" title="Home" id="V2F-lt-iHa">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ATj-4Y-y9c">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bnM-oA-22j">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="-223" y="143"/>
         </scene>
-        <!--Question View Controller-->
+        <!--Question-->
         <scene sceneID="VKa-tc-dLA">
             <objects>
                 <viewController id="Db6-u2-AQ0" customClass="QuestionViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,44 +100,36 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpQ-mH-OzY">
-                                <rect key="frame" x="16" y="407" width="336" height="30"/>
+                                <rect key="frame" x="19" y="400" width="336" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer1"/>
                                 <connections>
                                     <action selector="a1press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="mdu-vF-b2p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUx-Aa-MjD">
-                                <rect key="frame" x="16" y="445" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Answer2"/>
-                                <connections>
-                                    <action selector="a2press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="YR5-gU-oRG"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The question goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7f-jI-l46">
-                                <rect key="frame" x="16" y="127" width="343" height="179"/>
+                                <rect key="frame" x="16" y="108" width="343" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbg-Kp-I8Q">
-                                <rect key="frame" x="16" y="64" width="343" height="84"/>
+                                <rect key="frame" x="16" y="63" width="343" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Select an Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0C-co-6Qv">
-                                <rect key="frame" x="94" y="336" width="187" height="21"/>
+                                <rect key="frame" x="94" y="323" width="187" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cw9-df-ydG">
-                                <rect key="frame" x="16" y="535" width="336" height="30"/>
+                                <rect key="frame" x="19" y="561" width="336" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer4"/>
                                 <connections>
@@ -145,16 +137,31 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9w-YF-hnb">
-                                <rect key="frame" x="16" y="483" width="336" height="30"/>
+                                <rect key="frame" x="19" y="512" width="336" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer3"/>
                                 <connections>
                                     <action selector="a3press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="CF2-wB-KoI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUx-Aa-MjD">
+                                <rect key="frame" x="16" y="458" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Answer2"/>
+                                <connections>
+                                    <action selector="a2press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="YR5-gU-oRG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Question" id="UU5-Bz-aeS">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="HmW-XH-ghl">
+                            <connections>
+                                <segue destination="TZl-wi-E76" kind="show" id="AuT-XD-Y3d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ans1" destination="xpQ-mH-OzY" id="QfQ-ym-Ppe"/>
                         <outlet property="ans2" destination="JUx-Aa-MjD" id="FEz-yZ-tIn"/>
@@ -169,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="516" y="142.57871064467767"/>
         </scene>
-        <!--Answer View Controller-->
+        <!--Answer-->
         <scene sceneID="9BR-XR-ka8">
             <objects>
                 <viewController id="3to-Zo-0gg" customClass="AnswerViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4c-3S-oKd">
-                                <rect key="frame" x="16" y="323" width="343" height="187"/>
+                                <rect key="frame" x="16" y="322" width="343" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -196,22 +203,8 @@
                                     <action selector="nextButtonPressed:" destination="3to-Zo-0gg" eventType="touchUpInside" id="5Uf-5m-g5B"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6B-YP-QOn">
-                                <rect key="frame" x="166" y="72" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The answer is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re4-XL-Fjz">
-                                <rect key="frame" x="141" y="321" width="106" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You got the answer wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXN-t4-Wfs">
-                                <rect key="frame" x="88" y="552" width="199" height="21"/>
+                                <rect key="frame" x="134" y="319" width="106" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -224,9 +217,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You got the answer wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXN-t4-Wfs">
+                                <rect key="frame" x="100" y="488" width="199" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Answer" id="ZBm-kr-MDA">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="MLX-ZO-2PD">
+                            <connections>
+                                <segue destination="TZl-wi-E76" kind="show" id="03P-7s-moS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="answer" destination="p4c-3S-oKd" id="c6P-ke-BoS"/>
                         <outlet property="currentQuestion" destination="mSf-zA-Yzv" id="1zT-SK-0HH"/>
@@ -239,7 +246,7 @@
             </objects>
             <point key="canvasLocation" x="154" y="889"/>
         </scene>
-        <!--Finished View Controller-->
+        <!--Results-->
         <scene sceneID="GQP-41-2KN">
             <objects>
                 <viewController id="Tpx-gq-MQF" customClass="FinishedViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -251,22 +258,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Scored: 3/3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-qB-8kq">
-                                <rect key="frame" x="16" y="403" width="343" height="191"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-oA-uXm">
-                                <rect key="frame" x="159" y="72" width="56" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="That was really close!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPS-eU-uIO">
-                                <rect key="frame" x="16" y="271" width="343" height="124"/>
+                                <rect key="frame" x="16" y="199" width="343" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -280,9 +273,23 @@
                                     <segue destination="TZl-wi-E76" kind="show" id="0fq-ka-2Wj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Scored: 3/3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-qB-8kq">
+                                <rect key="frame" x="14" y="331" width="343" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Results" id="Qsh-Xs-s9c">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="lMA-y8-Jxo">
+                            <connections>
+                                <segue destination="TZl-wi-E76" kind="show" id="RIw-vp-Vpy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="banter" destination="YPS-eU-uIO" id="hpe-zV-2Ev"/>
                         <outlet property="scored" destination="5ul-qB-8kq" id="g5A-bf-3k4"/>
@@ -296,10 +303,14 @@
         <scene sceneID="wMz-Re-FjE">
             <objects>
                 <navigationController id="TZl-wi-E76" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yj7-9C-OZy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yj7-9C-OZy" customClass="Navigation">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BMz-GT-FUz">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="YOq-fT-b80" kind="relationship" relationship="rootViewController" id="bCc-Wt-7jL"/>
                     </connections>
@@ -313,6 +324,7 @@
         <image name="defaultIcon" width="626" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="03P-7s-moS"/>
         <segue reference="QVd-33-mT6"/>
     </inferredMetricsTieBreakers>
 </document>
