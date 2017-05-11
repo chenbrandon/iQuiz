@@ -18,6 +18,7 @@ class AnswerViewController: UIViewController {
     var score: Int!
     @IBOutlet weak var answer: UILabel!
     @IBOutlet weak var gotRight: UILabel!
+    @IBOutlet weak var currentQuestion: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class AnswerViewController: UIViewController {
             gotRight.text = "You got the answer right"
             score! += 1
         }
+        currentQuestion.text = theQuestion[number]
         // Do any additional setup after loading the view.
     }
 

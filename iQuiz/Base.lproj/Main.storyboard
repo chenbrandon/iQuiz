@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Math" translatesAutoresizingMaskIntoConstraints="NO" id="k2b-so-5Pj">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="k2b-so-5Pj">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -217,11 +217,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The question should go here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSf-zA-Yzv">
+                                <rect key="frame" x="47" y="157" width="305" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="answer" destination="p4c-3S-oKd" id="c6P-ke-BoS"/>
+                        <outlet property="currentQuestion" destination="mSf-zA-Yzv" id="1zT-SK-0HH"/>
                         <outlet property="gotRight" destination="IXN-t4-Wfs" id="DoE-Nh-VGv"/>
                         <segue destination="Db6-u2-AQ0" kind="show" identifier="answerToQuestion" id="QVd-33-mT6"/>
                         <segue destination="Tpx-gq-MQF" kind="show" identifier="answerToResults" id="hW3-tc-HdV"/>
@@ -229,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtV-er-lwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-641" y="906"/>
+            <point key="canvasLocation" x="-642.39999999999998" y="905.3973013493254"/>
         </scene>
         <!--Finished View Controller-->
         <scene sceneID="GQP-41-2KN">
@@ -257,10 +265,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="That was really close!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPS-eU-uIO">
+                                <rect key="frame" x="16" y="271" width="343" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="banter" destination="YPS-eU-uIO" id="hpe-zV-2Ev"/>
                         <outlet property="scored" destination="5ul-qB-8kq" id="g5A-bf-3k4"/>
                     </connections>
                 </viewController>
@@ -286,9 +302,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Math" width="320" height="320"/>
+        <image name="defaultIcon" width="626" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QVd-33-mT6"/>
+        <segue reference="MHq-zG-7Jz"/>
     </inferredMetricsTieBreakers>
 </document>
