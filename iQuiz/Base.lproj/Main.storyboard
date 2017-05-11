@@ -143,6 +143,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="ans1" destination="xpQ-mH-OzY" id="QfQ-ym-Ppe"/>
+                        <outlet property="ans2" destination="JUx-Aa-MjD" id="FEz-yZ-tIn"/>
+                        <outlet property="ans3" destination="t9w-YF-hnb" id="Ntu-RO-aDt"/>
+                        <outlet property="ans4" destination="cw9-df-ydG" id="G6f-uJ-KZQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdV-Ld-msK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

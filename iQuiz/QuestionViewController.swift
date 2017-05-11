@@ -14,8 +14,26 @@ class QuestionViewController: UIViewController {
     var question: String!
     var answers: [String]!
     var correct: Int!
+    
+    
+    
+    @IBOutlet weak var ans1: UIButton!
+    @IBOutlet weak var ans2: UIButton!
+    @IBOutlet weak var ans3: UIButton!
+    @IBOutlet weak var ans4: UIButton!
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("test \(theTitle) \(subject)  \(question) \(answers) + \(correct) ")
+        ans1.setTitle(answers[0], for: .normal)
+        ans2.setTitle(answers[1], for: .normal)
+        ans3.setTitle(answers[2], for: .normal)
+        ans4.setTitle(answers[3], for: .normal)
 
         // Do any additional setup after loading the view.
     }
