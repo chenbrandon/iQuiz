@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BLh-tY-rTT" id="Jah-fa-fMe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Math" translatesAutoresizingMaskIntoConstraints="NO" id="k2b-so-5Pj">
@@ -49,7 +49,7 @@
                                     <outlet property="Description" destination="KgK-m2-oki" id="xAl-JR-BDH"/>
                                     <outlet property="Title" destination="Dpn-0O-gdU" id="RR5-G6-feV"/>
                                     <outlet property="icon" destination="k2b-so-5Pj" id="fbZ-wi-W8g"/>
-                                    <segue destination="Db6-u2-AQ0" kind="show" id="MHq-zG-7Jz"/>
+                                    <segue destination="Db6-u2-AQ0" kind="show" identifier="cellToQuestion" id="MHq-zG-7Jz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -96,7 +96,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="3to-Zo-0gg" kind="show" id="1fk-9o-obZ"/>
+                                    <segue destination="3to-Zo-0gg" kind="show" identifier="questionToAnswer" id="1fk-9o-obZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpQ-mH-OzY">
@@ -172,7 +172,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="Tpx-gq-MQF" kind="show" id="ouA-8C-6hA"/>
+                                    <segue destination="Tpx-gq-MQF" kind="show" identifier="answerToResult" id="ouA-8C-6hA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6B-YP-QOn">

@@ -9,7 +9,11 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-
+    var theTitle: String!
+    var subject: String!
+    var question: String!
+    var answers: [String]!
+    var correct: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
 

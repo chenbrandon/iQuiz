@@ -96,14 +96,28 @@ class QuizTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "cellToQuestion", let qvc = segue.destination as? QuestionViewController {
+            if let cell = sender as? UITableViewCell, let index = tableView.indexPath(for: cell) {
+                let title: String = "theTitle"
+                let subject: String = "theSubject"
+                let question: String = "theQuestion"
+                let answers:[String] = ["a1", "a2", "a3", "a4"]
+                let correct: Int = 2
+                qvc.theTitle = title
+                qvc.subject = subject
+                qvc.question = question
+                qvc.answers = answers
+                qvc.correct = correct
+            }
+        }
     }
-    */
+    
 
 }
