@@ -9,14 +9,15 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-    var theTitle: String!
-    var subject: String!
-    var question: String!
+    var theSubject: String!
+    var theQuestion: String!
     var answers: [String]!
     var correct: Int!
     
     
     
+    @IBOutlet weak var subject: UILabel!
+    @IBOutlet weak var question: UILabel!
     @IBOutlet weak var ans1: UIButton!
     @IBOutlet weak var ans2: UIButton!
     @IBOutlet weak var ans3: UIButton!
@@ -29,11 +30,14 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test \(theTitle) \(subject)  \(question) \(answers) + \(correct) ")
+        print("test \(subject)  \(question) \(answers) + \(correct) ")
         ans1.setTitle(answers[0], for: .normal)
         ans2.setTitle(answers[1], for: .normal)
         ans3.setTitle(answers[2], for: .normal)
         ans4.setTitle(answers[3], for: .normal)
+        question.text = theQuestion
+        subject.text = theSubject
+        
 
         // Do any additional setup after loading the view.
     }
