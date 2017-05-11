@@ -9,9 +9,12 @@
 import UIKit
 
 class FinishedViewController: UIViewController {
-
+    var total: Int!
+    var right: Int!
+    @IBOutlet weak var scored: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        scored.text = "You scored \(right!) / \(total!)"
 
         // Do any additional setup after loading the view.
     }

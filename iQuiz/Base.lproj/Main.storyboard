@@ -193,7 +193,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="Tpx-gq-MQF" kind="show" identifier="answerToResult" id="ouA-8C-6hA"/>
+                                    <action selector="nextButtonPressed:" destination="3to-Zo-0gg" eventType="touchUpInside" id="5Uf-5m-g5B"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6B-YP-QOn">
@@ -223,11 +223,13 @@
                     <connections>
                         <outlet property="answer" destination="p4c-3S-oKd" id="c6P-ke-BoS"/>
                         <outlet property="gotRight" destination="IXN-t4-Wfs" id="DoE-Nh-VGv"/>
+                        <segue destination="Db6-u2-AQ0" kind="show" identifier="answerToQuestion" id="QVd-33-mT6"/>
+                        <segue destination="Tpx-gq-MQF" kind="show" identifier="answerToResults" id="hW3-tc-HdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtV-er-lwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-740" y="909.89505247376314"/>
+            <point key="canvasLocation" x="-641" y="906"/>
         </scene>
         <!--Finished View Controller-->
         <scene sceneID="GQP-41-2KN">
@@ -258,6 +260,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="scored" destination="5ul-qB-8kq" id="g5A-bf-3k4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Dm-Og-5ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,4 +288,7 @@
     <resources>
         <image name="Math" width="320" height="320"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QVd-33-mT6"/>
+    </inferredMetricsTieBreakers>
 </document>
