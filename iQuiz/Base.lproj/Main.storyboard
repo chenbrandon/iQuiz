@@ -103,11 +103,17 @@
                                 <rect key="frame" x="16" y="407" width="336" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer1"/>
+                                <connections>
+                                    <action selector="a1press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="mdu-vF-b2p"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUx-Aa-MjD">
                                 <rect key="frame" x="16" y="445" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer2"/>
+                                <connections>
+                                    <action selector="a2press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="YR5-gU-oRG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The question goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7f-jI-l46">
                                 <rect key="frame" x="16" y="127" width="343" height="179"/>
@@ -134,11 +140,17 @@
                                 <rect key="frame" x="16" y="535" width="336" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer4"/>
+                                <connections>
+                                    <action selector="a4press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="AKz-aw-hzw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9w-YF-hnb">
                                 <rect key="frame" x="16" y="483" width="336" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer3"/>
+                                <connections>
+                                    <action selector="a3press:" destination="Db6-u2-AQ0" eventType="touchUpInside" id="CF2-wB-KoI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +160,7 @@
                         <outlet property="ans2" destination="JUx-Aa-MjD" id="FEz-yZ-tIn"/>
                         <outlet property="ans3" destination="t9w-YF-hnb" id="Ntu-RO-aDt"/>
                         <outlet property="ans4" destination="cw9-df-ydG" id="G6f-uJ-KZQ"/>
+                        <outlet property="nextButton" destination="1ab-xe-aa8" id="IAX-eu-Tfy"/>
                         <outlet property="question" destination="N7f-jI-l46" id="hNC-DK-tdk"/>
                         <outlet property="subject" destination="dbg-Kp-I8Q" id="69z-6Y-VQL"/>
                     </connections>

@@ -23,6 +23,21 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var ans3: UIButton!
     @IBOutlet weak var ans4: UIButton!
     
+    @IBAction func a1press(_ sender: Any) {
+    }
+    @IBAction func a2press(_ sender: Any) {
+    }
+    @IBAction func a3press(_ sender: Any) {
+    }
+    @IBAction func a4press(_ sender: Any) {
+    }
+    @IBOutlet weak var nextButton: UIButton!
+    
+    
+    
+    
+    
+    
     
     
     
@@ -37,6 +52,7 @@ class QuestionViewController: UIViewController {
         ans4.setTitle(answers[3], for: .normal)
         question.text = theQuestion
         subject.text = theSubject
+        nextButton.isHidden = true
         
 
         // Do any additional setup after loading the view.
