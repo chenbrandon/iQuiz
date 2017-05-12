@@ -20,12 +20,12 @@ class QuizTableViewController: UITableViewController {
         }
         alert.addAction(UIAlertAction(title: "Check Now", style: .default, handler: { (_) in
             self.url = alert.textFields![0].text!
-            self.url = "https://tednewardsandbox.site44.com/questions.json"
+            //self.url = "https://tednewardsandbox.site44.com/questions.json"
             self.getJSON(self.url)
         }))
         self.present(alert, animated: true)
     }
-    var url = "" // seems to only fetch for https
+    var url = "https://tednewardsandbox.site44.com/questions.json"
     func getJSON(_ url: String) { // http://stackoverflow.com/questions/38292793/http-requests-in-swift-3
         if let theURL = URL(string: url) {
             let task = URLSession.shared.dataTask(with: theURL) { data, response, error in
@@ -96,7 +96,7 @@ class QuizTableViewController: UITableViewController {
     }
     
     func refresh() {
-        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 3)) {
+        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 1)) {
             print("calling reload")
             self.tableView.reloadData()
         }
@@ -104,7 +104,7 @@ class QuizTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getJSON(self.url)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
