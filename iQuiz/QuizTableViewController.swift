@@ -38,24 +38,17 @@ class QuizTableViewController: UITableViewController {
                     return
                 }
                 let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Dictionary<String, AnyObject>]
-                print(json!)
                 for i in json! {
                     let thisSubject = i["title"]
-                    print(thisSubject!)
                     let thisDesc = i["desc"]
-                    print(thisDesc!)
                     let questionsArray:[[String: Any]] = i["questions"] as! [[String : Any]]
-                    print(questionsArray)
                     var sumQuestions: [String] = []
                     var sumAnswers: [[String]] = []
                     var sumCorrect: [Int] = []
                     for j in questionsArray {
                         let questionText: String = j["text"] as! String
-                        print(questionText)
                         let answerNumber: Int = Int(j["answer"] as! String)!
-                        print(answerNumber)
                         let answersArray: [String] = j["answers"] as! [String]
-                        print(answersArray)
                         sumQuestions.append(questionText)
                         sumAnswers.append(answersArray)
                         sumCorrect.append(answerNumber)
@@ -65,27 +58,10 @@ class QuizTableViewController: UITableViewController {
                     self.questions.append(sumQuestions)
                     self.answers.append(sumAnswers)
                     self.correctAnswers.append(sumCorrect)
-                    print(self.correctAnswers)
                 }
-                /*if let array = json[[String: Any]] {
-                    for array in
-                } else {
-                    print("failed")
-                }
- */
-                /*
-                print("contents so far:")
-                print(self.quiz)
-                print(self.questions)
-                print(self.descriptions)
-                print(self.answers)
-                print(self.correctAnswers)
- */
             }
             task.resume()
             self.tableView.dataSource = self
-          
-            print("refreshed data")
         } else {
             let alert = UIAlertController(title: "Error", message: "Invalid URL", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "OK", style: .default)
@@ -255,20 +231,6 @@ class QuizTableViewController: UITableViewController {
                 qvc.correct = correctAnswers
                 qvc.number = 0
                 qvc.score = 0
-                /* //filler
-                let subject: String = "theSubject"
-                let question: [String] = ["theQuestion", "theQuestion2"]
-                let answers:[[String]] = [["a1", "a2", "a3", "a4"], ["b1","b2","b3","b4"]]
-                let correct: [Int] = [2, 4]
- 
-                qvc.theSubject = subject
-                qvc.theQuestion = question
-                qvc.answers = answers
-                qvc.correct = correct
-                qvc.number = 0
-                qvc.score = 0
-                */
-                
             }
         }
     }
