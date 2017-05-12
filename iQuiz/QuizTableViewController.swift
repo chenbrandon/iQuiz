@@ -12,11 +12,15 @@ class QuizTableViewController: UITableViewController {
     @IBOutlet var theTableView: UITableView!
 
     @IBAction func settingsPressed(_ sender: Any) {
+        if let a: String = UserDefaults.standard.value(forKey: "url") as? String {
+            self.url = a
+        }
         let alert = UIAlertController(title: "Settings", message: "After entering, please wait a few seconds", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Cancel", style: .default)
         alert.addAction(cancel)
         alert.addTextField { (textField) in
-            textField.attributedPlaceholder = NSAttributedString(string:"URL", attributes:[NSForegroundColorAttributeName: UIColor.gray])
+            textField.text = self.url
+            //textField.attributedPlaceholder = NSAttributedString(string:"URL", attributes:[NSForegroundColorAttributeName: UIColor.gray])
         }
         alert.addAction(UIAlertAction(title: "Check Now", style: .default, handler: { (_) in
             self.url = alert.textFields![0].text!
@@ -79,6 +83,7 @@ class QuizTableViewController: UITableViewController {
     func refresh() {
         DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 3)) {
             print("calling reload")
+            UserDefaults.standard.setValue(self.url, forKey: "url")
             UserDefaults.standard.setValue(self.quiz, forKey: "subjects")
             UserDefaults.standard.setValue(self.descriptions, forKey: "descriptions")
             UserDefaults.standard.setValue(self.questions, forKey: "questions")
