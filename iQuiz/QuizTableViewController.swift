@@ -77,13 +77,14 @@ class QuizTableViewController: UITableViewController {
     }
     
     func refresh() {
-        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 5)) {
+        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 3)) {
             print("calling reload")
             UserDefaults.standard.setValue(self.quiz, forKey: "subjects")
             UserDefaults.standard.setValue(self.descriptions, forKey: "descriptions")
             UserDefaults.standard.setValue(self.questions, forKey: "questions")
             UserDefaults.standard.setValue(self.answers, forKey: "answers")
             UserDefaults.standard.setValue(self.correctAnswers, forKey: "correctAnswers")
+            UserDefaults.standard.setValue(true, forKey: "exists")
             UserDefaults.standard.synchronize()
             self.tableView.reloadData()
 
@@ -92,6 +93,13 @@ class QuizTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.value(forKey: "exists") != nil {
+            quiz = UserDefaults.standard.value(forKey: "subjects") as! [String]
+            descriptions = UserDefaults.standard.value(forKey: "descriptions") as! [String]
+            questions = UserDefaults.standard.value(forKey: "questions") as! [[String]]
+            answers = UserDefaults.standard.value(forKey: "answers") as! [[[String]]]
+            correctAnswers = UserDefaults.standard.value(forKey: "correctAnswers") as! [[Int]]
+        }
         //self.quiz = UserDefaults.standard.value(forKey: "subjects") as! [String]
         //self.descriptions = UserDefaults.standard.value(forKey: "descriptions") as! [String]
         //self.questions = UserDefaults.standard.value(forKey: "questions") as! [[String]]
@@ -176,13 +184,31 @@ class QuizTableViewController: UITableViewController {
         //cell.icon.image = UIImage(named: subject)
         return cell
     }
+    var quiz: [String] = ["My Math ", "My Marvel", "My Science","My Luck"]
+    var descriptions: [String] = ["Test your math skills",
+                                  "Test your knowledge of Marvel",
+                                  "Test your understanding of the world",
+                                  "Test your Luck"]
+    var questions: [[String]] = [
+        ["Is 2 + 2 = 22 ?", "what is 5! ?"],
+        ["Who is iron man"],
+        ["What is water"],
+        ["Pick an option", "Pick another option", "Pick a final option"]]
+    var answers: [[[String]]] = [
+        [["no","yes","It's a trick question","Hillary's Emails"], ["when you shout 5", "1", "120", "0"]],
+        [["Tony Hawk", "Tony Stark", "Ronald McDonald", "Kaiba"]],
+        [["H20","Click here!","Yugi","C3H8 Propane"]],
+        [["1", "2", "3", "4"], ["1","2","3","4"],["1","2","3","4"]]
+    ]
+    var correctAnswers: [[Int]] = [[1,3], [2], [1], [3, 3, 4]]
+    
+    /*
     var quiz: [String] = UserDefaults.standard.value(forKey: "subjects") as! [String]
     var descriptions: [String] = UserDefaults.standard.value(forKey: "descriptions") as! [String]
     var questions : [[String]] = UserDefaults.standard.value(forKey: "questions") as! [[String]]
     var answers : [[[String]]] = UserDefaults.standard.value(forKey: "answers") as! [[[String]]]
-    
     var correctAnswers: [[Int]] = UserDefaults.standard.value(forKey: "correctAnswers") as! [[Int]]
-    
+    */
     var quiz2: [String] = ["My Math ", "My Marvel", "My Science","My Luck"]
     var descriptions2: [String] = ["Test your math skills",
                                   "Test your knowledge of Marvel",
