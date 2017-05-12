@@ -9,9 +9,10 @@
 import UIKit
 
 class QuizTableViewController: UITableViewController {
+    @IBOutlet var theTableView: UITableView!
 
     @IBAction func settingsPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Settings", message: "Use a custom URL", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Settings", message: "After entering, please wait a few seconds", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Cancel", style: .default)
         alert.addAction(cancel)
         alert.addTextField { (textField) in
@@ -45,6 +46,9 @@ class QuizTableViewController: UITableViewController {
                     print(thisDesc!)
                     let questionsArray:[[String: Any]] = i["questions"] as! [[String : Any]]
                     print(questionsArray)
+                    var sumQuestions: [String] = []
+                    var sumAnswers: [[String]] = []
+                    var sumCorrect: [Int] = []
                     for j in questionsArray {
                         let questionText: String = j["text"] as! String
                         print(questionText)
@@ -52,7 +56,16 @@ class QuizTableViewController: UITableViewController {
                         print(answerNumber)
                         let answersArray: [String] = j["answers"] as! [String]
                         print(answersArray)
+                        sumQuestions.append(questionText)
+                        sumAnswers.append(answersArray)
+                        sumCorrect.append(answerNumber)
                     }
+                    self.quiz.append(thisSubject as! String)
+                    self.descriptions.append(thisDesc as! String)
+                    self.questions.append(sumQuestions)
+                    self.answers.append(sumAnswers)
+                    self.correctAnswers.append(sumCorrect)
+                    print(self.correctAnswers)
                 }
                 /*if let array = json[[String: Any]] {
                     for array in
@@ -60,17 +73,35 @@ class QuizTableViewController: UITableViewController {
                     print("failed")
                 }
  */
-                
+                /*
+                print("contents so far:")
+                print(self.quiz)
+                print(self.questions)
+                print(self.descriptions)
+                print(self.answers)
+                print(self.correctAnswers)
+ */
             }
             task.resume()
+            self.tableView.dataSource = self
+          
+            print("refreshed data")
         } else {
             let alert = UIAlertController(title: "Error", message: "Invalid URL", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "OK", style: .default)
             alert.addAction(cancel)
             self.present(alert, animated: true)
         }
+        refresh()
     }
-        
+    
+    func refresh() {
+        DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 3)) {
+            print("calling reload")
+            self.tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -151,7 +182,6 @@ class QuizTableViewController: UITableViewController {
         //cell.icon.image = UIImage(named: subject)
         return cell
     }
-    
     var quiz: [String] = ["Mathematics", "Marvel Super Heroes", "Science!","Luck"]
     var descriptions: [String] = ["Test your math skills",
                                   "Test your knowledge of Marvel",
@@ -171,7 +201,26 @@ class QuizTableViewController: UITableViewController {
     ]
     
     var correctAnswers: [[Int]] = [[1,3], [2], [1], [3, 3, 4]]
-    
+    /*
+    var quiz: [String] = ["Mathematics", "Marvel Super Heroes", "Science!","Luck"]
+    var descriptions: [String] = ["Test your math skills",
+                                  "Test your knowledge of Marvel",
+                                  "Test your understanding of the world",
+                                  "Test your Luck"]
+    var questions : [[String]] = [
+        ["Is 2 + 2 = 22 ?", "what is 5! ?"],
+        ["Who is iron man"],
+        ["What is water"],
+        ["Pick an option", "Pick another option", "Pick a final option"]
+    ]
+    var answers : [[[String]]] = [
+        [["no","yes","It's a trick question","Hillary's Emails"], ["when you shout 5", "1", "120", "0"]],
+        [["Tony Hawk", "Tony Stark", "Ronald McDonald", "Kaiba"]],
+        [["H20","Click here!","Yugi","C3H8 Propane"]],
+        [["1", "2", "3", "4"], ["1","2","3","4"],["1","2","3","4"]]
+    ]
+    var correctAnswers: [[Int]] = [[1,3], [2], [1], [3, 3, 4]]
+    */
     
     func getSubject(_ n: Int) -> String {
         return quiz[n]

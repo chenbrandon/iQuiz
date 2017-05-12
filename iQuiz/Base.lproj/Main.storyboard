@@ -74,6 +74,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="KIW-qu-dUc" id="F0F-1b-Ej6"/>
+                        <outlet property="theTableView" destination="KIW-qu-dUc" id="TDt-7i-FBu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvZ-E7-PNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,7 +328,7 @@
         <image name="defaultIcon" width="626" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="03P-7s-moS"/>
-        <segue reference="QVd-33-mT6"/>
+        <segue reference="AuT-XD-Y3d"/>
+        <segue reference="MHq-zG-7Jz"/>
     </inferredMetricsTieBreakers>
 </document>
