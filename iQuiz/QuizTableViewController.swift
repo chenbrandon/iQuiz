@@ -11,12 +11,50 @@ import UIKit
 class QuizTableViewController: UITableViewController {
 
     @IBAction func settingsPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
+        let alert = UIAlertController(title: "Settings", message: "Use a custom URL", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .default)
+        alert.addAction(cancel)
+        alert.addTextField { (textField) in
+            textField.attributedPlaceholder = NSAttributedString(string:"URL", attributes:[NSForegroundColorAttributeName: UIColor.gray])
+        }
+        alert.addAction(UIAlertAction(title: "Check Now", style: .default, handler: { (_) in
+            self.url = alert.textFields![0].text!
+            self.url = "https://tednewardsandbox.site44.com/questions.json"
+            self.getJSON(self.url)
+        }))
         self.present(alert, animated: true)
     }
-    
+    var url = "" // seems to only fetch for https
+    func getJSON(_ url: String) { // http://stackoverflow.com/questions/38292793/http-requests-in-swift-3
+        if let theURL = URL(string: url) {
+            let task = URLSession.shared.dataTask(with: theURL) { data, response, error in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                guard let data = data else {
+                    print("Data is empty")
+                    return
+                }
+                let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Dictionary<String, AnyObject>]
+                print(json)
+                /*if let array = json[[String: Any]] {
+                    for array in
+                } else {
+                    print("failed")
+                }
+ */
+                
+            }
+            task.resume()
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Invalid URL", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(cancel)
+            self.present(alert, animated: true)
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -98,8 +136,8 @@ class QuizTableViewController: UITableViewController {
         return cell
     }
     
-    let quiz: [String] = ["Mathematics", "Marvel Super Heroes", "Science!","Luck"]
-    let descriptions: [String] = ["Test your math skills",
+    var quiz: [String] = ["Mathematics", "Marvel Super Heroes", "Science!","Luck"]
+    var descriptions: [String] = ["Test your math skills",
                                   "Test your knowledge of Marvel",
                                   "Test your understanding of the world",
                                   "Test your Luck"]
