@@ -37,7 +37,23 @@ class QuizTableViewController: UITableViewController {
                     return
                 }
                 let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Dictionary<String, AnyObject>]
-                print(json)
+                print(json!)
+                for i in json! {
+                    let thisSubject = i["title"]
+                    print(thisSubject!)
+                    let thisDesc = i["desc"]
+                    print(thisDesc!)
+                    let questionsArray:[[String: Any]] = i["questions"] as! [[String : Any]]
+                    print(questionsArray)
+                    for j in questionsArray {
+                        let questionText: String = j["text"] as! String
+                        print(questionText)
+                        let answerNumber: Int = Int(j["answer"] as! String)!
+                        print(answerNumber)
+                        let answersArray: [String] = j["answers"] as! [String]
+                        print(answersArray)
+                    }
+                }
                 /*if let array = json[[String: Any]] {
                     for array in
                 } else {
